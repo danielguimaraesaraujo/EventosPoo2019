@@ -14,7 +14,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 /**
  *
- * @author dgaraujo
+ * @author cbueno
  */
 public class EventosConnection {
     
