@@ -6,6 +6,7 @@
 package Dados;
 
 import Modelos.Evento;
+import java.util.Calendar;
 
 /**
  *
@@ -14,20 +15,28 @@ import Modelos.Evento;
 public class TesteDAO {
 
     public static void main(String[] args) {
-        testeDAO();
+        testeData();
     }
-    
+
     public static void testeDAO() {
         Evento evento = new Evento();
         evento.setNome("CCXP");
         evento.setNome("Um evento de cultura nerd mt legal e com muita coisa geek");
         evento.setDataEvento("06/12");
         evento.setLocal("São Paulo capital");
-        
-        
+
         EventoDAO eventoDAO = new EventoDAO();
         eventoDAO.inserir(evento);
-        
 
+    }
+
+    public static void testeData() {
+        String data1 = null;
+        Calendar.getInstance().getTime();
+
+        java.util.Date dataUtil = new java.util.Date();
+        java.sql.Date dataSql = new java.sql.Date(dataUtil.getTime());
+
+        System.out.println(datasql);
     }
 }
