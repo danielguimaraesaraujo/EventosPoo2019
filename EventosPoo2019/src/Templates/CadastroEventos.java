@@ -88,10 +88,6 @@ public class CadastroEventos extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(LocalEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
@@ -101,7 +97,11 @@ public class CadastroEventos extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(NomeEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(NomeEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(LocalEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(45, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -134,10 +134,6 @@ public class CadastroEventos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void DataEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DataEventoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DataEventoActionPerformed
-
     private void LocalEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LocalEventoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_LocalEventoActionPerformed
@@ -145,6 +141,10 @@ public class CadastroEventos extends javax.swing.JFrame {
     private void NomeEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeEventoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NomeEventoActionPerformed
+
+    private void DataEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DataEventoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DataEventoActionPerformed
 
     /**
      * @param args the command line arguments

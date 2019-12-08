@@ -14,18 +14,24 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
  *
  * @author carlo
  */
 public class EventoDAO {
+
     private Connection conexao;
+
+    long millis = System.currentTimeMillis();
+    java.sql.Date date = new java.sql.Date(millis);
+    
+    
     
     public String inserir(Evento evento) {
+
         String message = "";
         try {
-            String sql = "INSERT INTO tb_eventos (`nome`, `descricao`, `dataEvento`, `local`, `id_login`, `dataAtualizacao`) VALUES (?,?,?,?);";
+            String sql = "INSERT INTO tb_eventos (`nome`, `descricao`, `dataEvento`, `local`, `id_login`, `dataAtualizacao`) VALUES (?,?,?,?,?,?);";
             conexao = ModuloConexao.conector();
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, evento.getNome());
@@ -33,7 +39,7 @@ public class EventoDAO {
             stmt.setString(3, evento.getDataEvento());
             stmt.setString(4, evento.getLocal());
             stmt.setString(5, "1");
-            stmt.setString(6, "");
+            stmt.setString(6,""+date);
             // não mexer nessas duas linhas abaixo, elas são padrão
             stmt.execute();
             stmt.close();
@@ -44,5 +50,5 @@ public class EventoDAO {
         System.out.println(message);
         return message;
     }
-    
+
 }
