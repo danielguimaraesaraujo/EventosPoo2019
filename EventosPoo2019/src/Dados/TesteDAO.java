@@ -6,6 +6,7 @@
 package Dados;
 
 import Modelos.Evento;
+import Modelos.Inscricao;
 import java.util.Calendar;
 
 /**
@@ -15,10 +16,19 @@ import java.util.Calendar;
 public class TesteDAO {
 
     public static void main(String[] args) {
-        testeDAO();
+        testeDAOInscricao();
     }
 
-    public static void testeDAO() {
+    public static void testeDAOInscricao() {
+        Inscricao inscricao = new Inscricao();
+        inscricao.setIdEventos("14");
+        
+        
+        InscricaoDAO inscricaoDAO = new InscricaoDAO();
+        inscricaoDAO.inserir(inscricao);
+
+    }
+    public static void testeDAOEventos() {
         Evento evento = new Evento();
         evento.setNome("aniversario do ET jonatas");
         evento.setDescricao("dia de nascimento do ET jonatas");
