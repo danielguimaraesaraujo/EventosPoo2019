@@ -13,6 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -44,8 +45,10 @@ public class EventoDAO {
             stmt.execute();
             stmt.close();
             message = "Evento " + evento.getNome() + " criado com sucesso";
+            JOptionPane.showMessageDialog(null, "Evento " + evento.getNome() + " criado com sucesso");
         } catch (SQLException e) {
             message = "Evento " + evento.getNome() + " não foi criado com sucesso. erro= " + e.getMessage();
+            JOptionPane.showMessageDialog(null, "Evento " + evento.getNome() + " não foi criado com sucesso. erro= " + e.getMessage());
         }
         System.out.println(message);
         return message;

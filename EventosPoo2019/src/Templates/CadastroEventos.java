@@ -5,6 +5,10 @@
  */
 package Templates;
 
+import Dados.EventoDAO;
+import Modelos.Evento;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author PauloPC
@@ -27,7 +31,6 @@ public class CadastroEventos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        DataEvento = new javax.swing.JTextField();
         LocalEvento = new javax.swing.JTextField();
         NomeEvento = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -37,14 +40,9 @@ public class CadastroEventos extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        DataEvento = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        DataEvento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DataEventoActionPerformed(evt);
-            }
-        });
 
         LocalEvento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,6 +61,11 @@ public class CadastroEventos extends javax.swing.JFrame {
         jScrollPane1.setViewportView(DecricaoEvento);
 
         BotaoCadastrarEvento.setText("Cadastrar Evento");
+        BotaoCadastrarEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoCadastrarEventoActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Nome");
 
@@ -71,6 +74,17 @@ public class CadastroEventos extends javax.swing.JFrame {
         jLabel3.setText("Local");
 
         jLabel4.setText("Descrição");
+
+        try {
+            DataEvento.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####-##-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        DataEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DataEventoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -92,7 +106,7 @@ public class CadastroEventos extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(DataEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
@@ -111,11 +125,11 @@ public class CadastroEventos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NomeEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(DataEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DataEvento, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                     .addComponent(jLabel2))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LocalEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
@@ -128,7 +142,7 @@ public class CadastroEventos extends javax.swing.JFrame {
                         .addComponent(jLabel4)))
                 .addGap(34, 34, 34)
                 .addComponent(BotaoCadastrarEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addGap(74, 74, 74))
         );
 
         pack();
@@ -141,6 +155,20 @@ public class CadastroEventos extends javax.swing.JFrame {
     private void NomeEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeEventoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NomeEventoActionPerformed
+
+    private void BotaoCadastrarEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoCadastrarEventoActionPerformed
+        // TODO add your handling code here:
+        
+        Evento evento = new Evento();
+        evento.setNome(NomeEvento.getText());
+        evento.setDescricao(DecricaoEvento.getText());
+        evento.setDataEvento(DataEvento.getText());
+        evento.setLocal(LocalEvento.getText());
+
+        EventoDAO eventoDAO = new EventoDAO();
+        eventoDAO.inserir(evento);
+       
+    }//GEN-LAST:event_BotaoCadastrarEventoActionPerformed
 
     private void DataEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DataEventoActionPerformed
         // TODO add your handling code here:
@@ -177,13 +205,14 @@ public class CadastroEventos extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new CadastroEventos().setVisible(true);
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotaoCadastrarEvento;
-    private javax.swing.JTextField DataEvento;
+    private javax.swing.JFormattedTextField DataEvento;
     private javax.swing.JTextArea DecricaoEvento;
     private javax.swing.JTextField LocalEvento;
     private javax.swing.JTextField NomeEvento;
