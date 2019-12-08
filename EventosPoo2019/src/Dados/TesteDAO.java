@@ -34,8 +34,12 @@ public class TesteDAO {
         String data1 = null;
         Calendar.getInstance().getTime();
 
-        java.util.Date dataUtil = new java.util.Date();
-        java.sql.Date dataSql = new java.sql.Date(dataUtil.getTime());
+        myPreparedStatement.setObject( 
+    … ,                                         // Specify the ordinal number of which argument in SQL statement.
+    myJavaUtilDate.toInstant()                  // Convert from legacy class `java.util.Date` (a moment in UTC) to a modern `java.time.Instant` (a moment in UTC).
+        .atZone( ZoneId.of( "Africa/Tunis" ) )  // Adjust from UTC to a particular time zone, to determine a date. Instantiating a `ZonedDateTime`.
+        .toLocalDate()                          // Extract a date-only `java.time.LocalDate` object from the date-time `ZonedDateTime` object.
+)
 
         System.out.println(datasql);
     }
