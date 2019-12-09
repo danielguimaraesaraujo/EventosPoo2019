@@ -127,6 +127,7 @@
         <Property name="text" type="java.lang.String" value="Cadastrar Evento"/>
       </Properties>
       <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BotaoCadastrarEventoMouseClicked"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoCadastrarEventoActionPerformed"/>
       </Events>
     </Component>

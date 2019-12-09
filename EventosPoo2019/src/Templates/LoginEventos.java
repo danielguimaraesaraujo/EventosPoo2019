@@ -54,21 +54,20 @@ public class LoginEventos extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(66, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton1)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jLabel2)
                         .addComponent(jLabel1)
-                        .addComponent(txtsenha, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
-                        .addComponent(txtlogin)))
-                .addContainerGap(86, Short.MAX_VALUE))
+                        .addComponent(txtsenha)
+                        .addComponent(txtlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(42, 42, 42))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtlogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -76,8 +75,9 @@ public class LoginEventos extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtsenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addComponent(jButton1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -89,21 +89,33 @@ public class LoginEventos extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(67, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45))
+                .addContainerGap())
         );
 
+        getAccessibleContext().setAccessibleParent(this);
+
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (txtlogin.getText().equals("Carlos") && txtsenha.getText().equals("123456")) {
+        if (txtlogin.getText().equals("Carlos") && txtsenha.getText().equals("1234")) {
             JOptionPane.showMessageDialog(null, "Bem Vindo");
-        } else if (txtlogin.getText().equals("Paulo") && txtsenha.getText().equals("123456")) {
+            HomeEventos telaprincipal = new HomeEventos();
+            telaprincipal.setVisible(true);
+            this.dispose();
+        } else if (txtlogin.getText().equals("Paulo") && txtsenha.getText().equals("1234")) {
             JOptionPane.showMessageDialog(null, "Bem Vindo");
-        } else if (txtlogin.getText().equals("Daniel") && txtsenha.getText().equals("123456")) {
+            HomeEventos telaprincipal = new HomeEventos();
+            telaprincipal.setVisible(true);
+            this.dispose();
+        } else if (txtlogin.getText().equals("Daniel") && txtsenha.getText().equals("1234")) {
             JOptionPane.showMessageDialog(null, "Bem Vindo");
+            HomeEventos telaprincipal = new HomeEventos();
+            telaprincipal.setVisible(true);
+            this.dispose();
         }
         else {
             JOptionPane.showMessageDialog(null,"Acesso Negado");

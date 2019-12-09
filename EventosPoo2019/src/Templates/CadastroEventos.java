@@ -64,6 +64,11 @@ public class CadastroEventos extends javax.swing.JFrame {
         jScrollPane1.setViewportView(DecricaoEvento);
 
         BotaoCadastrarEvento.setText("Cadastrar Evento");
+        BotaoCadastrarEvento.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoCadastrarEventoMouseClicked(evt);
+            }
+        });
         BotaoCadastrarEvento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotaoCadastrarEventoActionPerformed(evt);
@@ -178,6 +183,21 @@ public class CadastroEventos extends javax.swing.JFrame {
     private void DataEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DataEventoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DataEventoActionPerformed
+
+    private void BotaoCadastrarEventoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCadastrarEventoMouseClicked
+        // TODO add your handling code here:
+        
+        Evento evento = new Evento();
+        evento.setNome(NomeEvento.getText());
+        evento.setDescricao(DecricaoEvento.getText());
+        evento.setDataEvento(DataEvento.getText());
+        evento.setLocal(LocalEvento.getText());
+
+        EventoDAO eventoDAO = new EventoDAO();
+        eventoDAO.inserir(evento);
+        
+        this.dispose();    
+    }//GEN-LAST:event_BotaoCadastrarEventoMouseClicked
 
     /**
      * @param args the command line arguments

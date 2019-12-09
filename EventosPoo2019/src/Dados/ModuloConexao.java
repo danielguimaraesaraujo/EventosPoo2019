@@ -18,7 +18,7 @@ public class ModuloConexao {
         java.sql.Connection conexao = null;
 
         String driver = "com.mysql.cj.jdbc.Driver";
-        String url = "jdbc:mysql://localhost:3306/db_eventos";
+        String url = "jdbc:mysql://localhost:3306/db_eventos?useUnicode=yes&characterEncoding=UTF-8&useTimezone=true&serverTimezone=UTC";
         String user = "root";
         String password = "";
 
