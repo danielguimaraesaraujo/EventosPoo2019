@@ -24,7 +24,7 @@ public final class HomeEventos extends javax.swing.JFrame {
      */
     public HomeEventos() {
         initComponents();
-        setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
+        //setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         try {
             preencherTabela();
         } catch (SQLException ex) {
@@ -93,8 +93,8 @@ public final class HomeEventos extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         getContentPane().add(jPanel1);
