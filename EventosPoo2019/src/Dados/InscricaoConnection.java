@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controles;
+package Dados;
 
 /**
  *
  * @author dgaraujo
  */
-public class cadTipoMateriaController {
+public class InscricaoConnection extends EventosConnection {
+    
+  
     
 }

@@ -14,14 +14,13 @@ import java.sql.SQLException;
  * @author cbueno
  */
 public class HomeConnection {
-
-    public static ResultSet selectHome() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
-        String query = "select a.nome , a.datatarefa, a.descricao, b.Materia ,c.Tarefa,d.Status  from tarefas AS a \n" +
-                        "join tipomateria as b on a.id_tipoMateria = b.id\n" +
-                        "join tipotarefa as c on a.id_tipoTarefa = c.id\n" +
-                        "join cadstatus as d on a.id_cadstatus = d.id";
-        PreparedStatement ps = EventosConnection.ConnectionEventosDB().prepareStatement(query);
+    
+        public static ResultSet selectHome() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
+        String query = "SELECT id as 'Id_Eventos',Nome,Descricao, DATE_FORMAT(dataEvento,'%d/%m/%Y') as Data_Evento, local FROM db_eventos.tb_eventos";
+        PreparedStatement ps = EventosConnection.ConnectionEventosDB().prepareCall(query);
         ResultSet rs = ps.executeQuery();
         return rs;
     }
+    
+
 }
