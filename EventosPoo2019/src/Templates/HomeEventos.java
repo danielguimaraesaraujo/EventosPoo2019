@@ -24,7 +24,7 @@ public final class HomeEventos extends javax.swing.JFrame {
      */
     public HomeEventos() {
         initComponents();
-        
+        //setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         try {
             preencherTabela();
         } catch (SQLException ex) {
