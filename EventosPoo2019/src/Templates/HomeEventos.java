@@ -134,20 +134,20 @@ public final class HomeEventos extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
-       CadastroEventos cadastroeventos = new CadastroEventos();
+       CadastroEventosOld cadastroeventos = new CadastroEventosOld();
        cadastroeventos.setVisible(true);
          
 
     }//GEN-LAST:event_jMenu2ActionPerformed
 
     private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
-       CadastroEventos cadastroeventos = new CadastroEventos();
+       CadastroEventosOld cadastroeventos = new CadastroEventosOld();
        cadastroeventos.setVisible(true);
     }//GEN-LAST:event_jMenu2MouseClicked
 
     private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
         // TODO add your handling code here:
-         CadastroInscricao cadastroinscricao = new CadastroInscricao();
+         CadastroInscricaoOld cadastroinscricao = new CadastroInscricaoOld();
             cadastroinscricao.setVisible(true);
     }//GEN-LAST:event_jMenu1MouseClicked
 

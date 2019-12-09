@@ -16,26 +16,26 @@ import java.util.logging.Logger;
  *
  * @author dgaraujo
  */
-public class CadastroInscricao extends javax.swing.JFrame {
+public class CadastroInscricaoOld extends javax.swing.JFrame {
 
      public ListaEventosConnection listaconnection = new ListaEventosConnection();
     
     /**
      * Creates new form CadastroInscricao
      */
-    public CadastroInscricao() {
+    public CadastroInscricaoOld() {
         initComponents();
         centralizarComponente();
          try {
              preencherEventos();
          } catch (IllegalAccessException ex) {
-             Logger.getLogger(CadastroInscricao.class.getName()).log(Level.SEVERE, null, ex);
+             Logger.getLogger(CadastroInscricaoOld.class.getName()).log(Level.SEVERE, null, ex);
          } catch (InstantiationException ex) {
-             Logger.getLogger(CadastroInscricao.class.getName()).log(Level.SEVERE, null, ex);
+             Logger.getLogger(CadastroInscricaoOld.class.getName()).log(Level.SEVERE, null, ex);
          } catch (SQLException ex) {
-             Logger.getLogger(CadastroInscricao.class.getName()).log(Level.SEVERE, null, ex);
+             Logger.getLogger(CadastroInscricaoOld.class.getName()).log(Level.SEVERE, null, ex);
          } catch (ClassNotFoundException ex) {
-             Logger.getLogger(CadastroInscricao.class.getName()).log(Level.SEVERE, null, ex);
+             Logger.getLogger(CadastroInscricaoOld.class.getName()).log(Level.SEVERE, null, ex);
          }
         
     }
@@ -115,8 +115,6 @@ public class CadastroInscricao extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        label1.getAccessibleContext().setAccessibleName("Cadastro de Inscrição");
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -148,20 +146,21 @@ public class CadastroInscricao extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroInscricao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroInscricaoOld.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroInscricao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroInscricaoOld.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroInscricao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroInscricaoOld.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroInscricao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroInscricaoOld.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroInscricao().setVisible(true);
+                new CadastroInscricaoOld().setVisible(true);
             }
         });
     }
@@ -177,7 +176,7 @@ public class CadastroInscricao extends javax.swing.JFrame {
             cboEventos.addItem(a);
             }
        } catch (IllegalAccessException | InstantiationException | SQLException | ClassNotFoundException ex) {
-             Logger.getLogger(CadastroInscricao.class.getName()).log(Level.SEVERE, null, ex);
+             Logger.getLogger(CadastroInscricaoOld.class.getName()).log(Level.SEVERE, null, ex);
          }
        
     }    
