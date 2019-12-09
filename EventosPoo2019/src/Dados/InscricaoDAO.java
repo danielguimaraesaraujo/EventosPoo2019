@@ -46,4 +46,6 @@ public class InscricaoDAO {
         System.out.println(message);
         return message;
     }
+
+    
 }

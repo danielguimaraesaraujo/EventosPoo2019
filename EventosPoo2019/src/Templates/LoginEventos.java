@@ -5,6 +5,7 @@
  */
 package Templates;
 
+import Controles.Autenticador;
 import javax.swing.JOptionPane;
 
 /**
@@ -101,26 +102,15 @@ public class LoginEventos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (txtlogin.getText().equals("Carlos") && txtsenha.getText().equals("1234")) {
-            JOptionPane.showMessageDialog(null, "Bem Vindo");
-            HomeEventos telaprincipal = new HomeEventos();
-            telaprincipal.setVisible(true);
-            this.dispose();
-        } else if (txtlogin.getText().equals("Paulo") && txtsenha.getText().equals("1234")) {
-            JOptionPane.showMessageDialog(null, "Bem Vindo");
-            HomeEventos telaprincipal = new HomeEventos();
-            telaprincipal.setVisible(true);
-            this.dispose();
-        } else if (txtlogin.getText().equals("Daniel") && txtsenha.getText().equals("1234")) {
-            JOptionPane.showMessageDialog(null, "Bem Vindo");
-            HomeEventos telaprincipal = new HomeEventos();
-            telaprincipal.setVisible(true);
+        
+        Autenticador auth = new Autenticador();
+        if (auth.getAutentication(txtlogin.getText(), txtsenha.getText())){
             this.dispose();
         }
-        else {
-            JOptionPane.showMessageDialog(null,"Acesso Negado");
-        }
-
+        
+        
+        this.dispose();
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
