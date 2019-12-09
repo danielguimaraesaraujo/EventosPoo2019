@@ -7,6 +7,8 @@ package Templates;
 
 import Dados.InscricaoDAO;
 import Modelos.Inscricao;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
@@ -21,6 +23,7 @@ public class CadastroDeInscricao extends javax.swing.JFrame {
      */
     public CadastroDeInscricao() {
         initComponents();
+        centralizarComponente();
     }
 
     /**
@@ -136,6 +139,10 @@ public class CadastroDeInscricao extends javax.swing.JFrame {
                 new CadastroDeInscricao().setVisible(true);
             }
         });
+    }
+    public void centralizarComponente() {
+        Dimension ds = Toolkit.getDefaultToolkit().getScreenSize(); 
+        Dimension dw = getSize(); setLocation((ds.width - dw.width) / 2, (ds.height - dw.height) / 2);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
