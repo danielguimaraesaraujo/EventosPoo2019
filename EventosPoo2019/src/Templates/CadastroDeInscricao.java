@@ -94,7 +94,9 @@ public class CadastroDeInscricao extends javax.swing.JFrame {
         inscricao.setIdEventos("" + idDoEvento.getText());
         InscricaoDAO inscricaoDAO = new InscricaoDAO();
         inscricaoDAO.inserir(inscricao);
-
+       this.dispose();    
+       
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void idDoEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idDoEventoActionPerformed

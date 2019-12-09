@@ -167,7 +167,9 @@ public class CadastroEventos extends javax.swing.JFrame {
 
         EventoDAO eventoDAO = new EventoDAO();
         eventoDAO.inserir(evento);
-       
+        
+        this.dispose();    
+        
     }//GEN-LAST:event_BotaoCadastrarEventoActionPerformed
 
     private void DataEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DataEventoActionPerformed
